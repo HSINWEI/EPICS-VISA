@@ -22,6 +22,8 @@
 # Build variables that are NOT used in paths should be set in
 # the CONFIG_SITE file.
 
+SUPPORT=
+
 # EPICS_BASE should appear last so earlier modules can override stuff:
 EPICS_BASE = C:/Instrument/Apps/EPICS/base/master
 
@@ -29,10 +31,10 @@ EPICS_BASE = C:/Instrument/Apps/EPICS/base/master
 ASYN = $(SUPPORT)/asyn/master
 
 ## VISAdrvTestApp requires StreamDevice
-STREAMDEVICE=$(SUPPORT)/StreamDevice/master
-ONCRPC = $(SUPPORT)/oncrpc/master
+STREAM=$(SUPPORT)/StreamDevice/master
+#!ONCRPC = $(SUPPORT)/oncrpc/master
 ## If your StreamDevice installation was built with pcre support, define PCRE too 
-PCRE = $(SUPPORT)/pcre/master
+#!PCRE = $(SUPPORT)/pcre/master
 
 # Set RULES here if you want to use build rules from somewhere
 # other than EPICS_BASE:
@@ -46,5 +48,5 @@ PCRE = $(SUPPORT)/pcre/master
 # optional extra local definitions here
 -include $(TOP)/configure/RELEASE.private
 
-include $(TOP)/../../../ISIS_CONFIG
+-include $(TOP)/../../../ISIS_CONFIG
 -include $(TOP)/../../../ISIS_CONFIG.$(EPICS_HOST_ARCH)
